@@ -39,9 +39,10 @@ vi /opt/aws/amazon-cloudwatch-agent/etc/common-config.toml
    shared_credential_file = "/root/.aws/credentials"
 ```
 
-vi /root/config.json
-
 ```bash
+
+wget https://raw.githubusercontent.com/NyiNyiSoePaing/CloudWatchAgent/main/config.json -O /root/config.json
+
 /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m onPremise -s -c file:/root/config.json
 
 /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m onPrimise -a status
